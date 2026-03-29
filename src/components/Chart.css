@@ -1,0 +1,132 @@
+.chart {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: #111118;
+  background-image: radial-gradient(circle at 80% 50%, rgba(218, 165, 32, 0.06) 0%, transparent 50%);
+  overflow: hidden;
+}
+
+/* ─── BG TEXT ─── */
+.chart-bg-text {
+  position: absolute;
+  font-size: clamp(8rem, 18vw, 20rem);
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 0.8;
+  letter-spacing: -3px;
+  transform: scaleY(1.3);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.chart-bg-left { left: 2%; top: 15%; }
+
+/* ─── BRACKETS ─── */
+.chart .bracket {
+  z-index: 1;
+}
+
+.chart .br-tl {
+  top: 5%; left: 4%;
+  border-width: 6px 0 0 6px;
+}
+
+.chart .br-br {
+  bottom: 5%; right: 4%;
+  border-width: 0 6px 6px 0;
+}
+
+/* ─── CONTAINER ─── */
+.chart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* ─── HEADER ─── */
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.chart-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.chart-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text);
+}
+
+.chart-price-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.chart-price-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.chart-price-val {
+  font-family: "Space Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.chart-price-change {
+  font-family: "Impact", sans-serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.chart-price-change.green { color: #00ff88; }
+.chart-price-change.red { color: #ff4444; }
+
+/* ─── IFRAME ─── */
+.chart-embed {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(218, 165, 32, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.chart-iframe {
+  width: 100%;
+  height: 650px;
+  border: none;
+  background: #0d0d0d;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .chart {
+    padding: 4rem 1.5rem;
+  }
+
+  .chart-iframe {
+    height: 450px;
+  }
+
+  .chart-header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}

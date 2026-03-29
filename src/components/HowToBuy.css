@@ -1,0 +1,255 @@
+.how-to-buy {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: var(--primary-bg);
+  background-image: radial-gradient(circle at 50% 60%, rgba(218, 165, 32, 0.1) 0%, transparent 60%);
+  overflow: hidden;
+}
+
+/* ─── BG TEXT ─── */
+.htb-bg-text {
+  position: absolute;
+  font-size: clamp(8rem, 20vw, 22rem);
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 0.8;
+  letter-spacing: -3px;
+  transform: scaleY(1.3);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.htb-bg-left { left: 2%; top: 15%; }
+.htb-bg-right { right: 2%; bottom: 10%; }
+
+/* ─── BRACKETS ─── */
+.how-to-buy .bracket {
+  z-index: 1;
+}
+
+.how-to-buy .br-tr {
+  top: 5%; right: 4%;
+  border-width: 6px 6px 0 0;
+}
+
+.how-to-buy .br-bl {
+  bottom: 5%; left: 4%;
+  border-width: 0 0 6px 6px;
+}
+
+/* ─── CONTAINER ─── */
+.htb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* ─── HEADER ─── */
+.htb-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.htb-title {
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.htb-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════
+   IMAGE HERO WITH OVERLAID CONTENT
+   ═══════════════════════════════════════ */
+.htb-hero {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(218, 165, 32, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.htb-hero-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.htb-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg,
+      rgba(10, 10, 20, 0.55) 0%,
+      rgba(10, 10, 20, 0.75) 40%,
+      rgba(10, 10, 20, 0.88) 70%,
+      rgba(10, 10, 20, 0.95) 100%
+    );
+}
+
+.htb-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 2.5rem;
+}
+
+/* ─── GRID ─── */
+.htb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── CARD ─── */
+.htb-card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid transparent;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+}
+
+.htb-card:hover {
+  background: rgba(0, 0, 0, 0.65);
+  border-top-color: var(--accent-bright);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.htb-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.htb-step-num {
+  font-size: 2.5rem;
+  color: rgba(218, 165, 32, 0.35);
+}
+
+.htb-icon {
+  color: var(--accent);
+}
+
+.htb-card-title {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.htb-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* ─── CTA BUTTON ─── */
+.htb-cta-wrap {
+  text-align: center;
+}
+
+.htb-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 3rem;
+  background: var(--accent);
+  color: #000;
+  font-size: 1.2rem;
+  border-radius: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s var(--bounce);
+  box-shadow: 0 8px 30px rgba(218, 165, 32, 0.3);
+}
+
+.htb-cta-btn:hover {
+  background: var(--accent-bright);
+  transform: translateY(-4px) skewX(-2deg);
+  box-shadow: 0 15px 40px rgba(218, 165, 32, 0.5);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .htb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .htb-hero-content {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-to-buy {
+    padding: 4rem 1.2rem;
+  }
+
+  .how-to-buy .floating-sticker {
+    display: none;
+  }
+
+  .htb-header {
+    margin-bottom: 2rem;
+  }
+
+  .htb-hero {
+    border-radius: 16px;
+  }
+
+  .how-to-buy .bracket {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .how-to-buy {
+    padding: 3rem 1rem;
+  }
+
+  .htb-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .htb-hero-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .htb-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .htb-step-num {
+    font-size: 2rem;
+  }
+
+  .htb-card-title {
+    font-size: 1.1rem;
+  }
+
+  .htb-cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
